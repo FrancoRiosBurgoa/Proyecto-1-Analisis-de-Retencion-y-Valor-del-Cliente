@@ -1,0 +1,8 @@
+--Pregunta de negocio: ¿Cuánto dinero ingresa mensualmente por cada tipo de plan y cuántas horas de consumo promedio tiene cada uno?
+SELECT 
+    tipo_plan, 
+    SUM(precio_mensual) AS ingresos_totales,
+    AVG(horas_reproduccion_mes) AS promedio_horas_uso
+FROM suscripciones
+GROUP BY tipo_plan
+ORDER BY ingresos_totales DESC;
